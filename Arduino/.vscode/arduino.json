@@ -1,5 +1,0 @@
-{
-  "sketch": "SensorSonidoSecuenciaLuces/SensorSonidoSecuenciaLuces.ino",
-  "board": "arduino:avr:uno",
-  "port": ""
-}

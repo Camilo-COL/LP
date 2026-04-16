@@ -17,4 +17,3 @@ for n in range(len(ventas)):
 
     print("venta numero: ", numero, "valor: ", v_v, "tipo: ", tipo)
 print("Cantidad de ventas altas:", contador)
-
