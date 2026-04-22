@@ -26,13 +26,13 @@ desaprobados = 0
 
 # Registrar notas de cada estudiante
 for e in range(1, estudiantes + 1):
-    print(f"\n--- Estudiante {e} ---")
+    print(" Estudiante",e)
     notas = []
     
     # Pedir notas validadas
     for i in range(1, cnotas + 1):
         while True:
-            nota = float(input(f"Nota {i}: "))
+            nota = float(input("Nota",i))
             if 0 <= nota <= 5:  # Validar entre 0 y 5
                 notas.append(nota)
                 break
@@ -58,10 +58,10 @@ for e in range(1, estudiantes + 1):
         "resultado": resultado})
 
 for registro in registro_estudiantes:
-    print(f"\nEstudiante {registro['estudiante']}:")
-    print(f"  Notas: {registro['notas']}")
-    print(f"  Promedio: {registro['promedio']}")
-    print(f"  {registro['resultado']}")
+    print("Estudiante",registro,'estudiante'":")
+    print(" Notas:",registro,"notas")
+    print("  Promedio:",registro,"promedio")
+    print(registro,"resultado")
 
 print("Total aprobados: ", aprobados)
 print("Total desaprobados: ", desaprobados)
