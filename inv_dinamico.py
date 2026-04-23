@@ -6,8 +6,10 @@ while True:
     def op1():
         global codigo1
         nombre=str(input("nombre del producto: "))
+        categoria=str(input("A que categoria pertenece: "))
         precio=int(input("valor del producto: "))
-        producto_nuevo={"codigo":codigo1,"nombre":nombre,"precio":precio}
+        stock=int(input("Cuanto de esto hay?: "))
+        producto_nuevo={"codigo":codigo1,"nombre":nombre,"categoria":categoria,"precio":precio,"Stock":stock}
         inventario.append(producto_nuevo)
         print(producto_nuevo)
         codigo1+=1
@@ -35,18 +37,24 @@ while True:
 #3. eliminar productos
     def op3():
         buscar=int(input("ingrese el codigo del producto: "))
+        for p in inventario:
+            if p["codigo"]==buscar:
+                print(f"producto encontrado: {p} ")
+                delet=str(input("deseas eliminarlo? "))
+                if delet=="si":
+                    inventario.remove(p)
+                    print("producto eliminado con exito")
+            elif buscar!=p:
+                print("revisa si el codigo esta bien")
+
+#4. Buscar producto
+    def op4():
+        buscar=int(input("ingrese el codigo del producto: "))
         for n in inventario:
             if n["codigo"]==buscar:
                 print(f"producto encontrado: {n} ")
-                delet=str(input("deseas eliminarlo? "))
-                if delet=="si":
-                    inventario.remove(n)
-                    print("producto eliminado con exito")
-                    break
-                try:
-                    buscar != n
-                    print("revisa si el codigo esta bien")
-                    
+            elif buscar!=n:
+                print("revisa si el codigo esta bien")
 
     print("1. Registrar producto")
     print("2. Actualizar producto")
@@ -63,6 +71,6 @@ while True:
     elif op==4:
         op4()
     elif op==5:
-        op5()
+        print(inventario)
     else:
         print("elige una opcion posible")
