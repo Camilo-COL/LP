@@ -19,9 +19,9 @@ while True:
         for p in inventario:
             if p["codigo"]==buscar:
                 print(f"producto encontrado: {p} ")
-                act=str(input("que deseas actualizar"))
+                act=str(input("que deseas actualizar "))
                 if act=="nombre":
-                    cambio_n=str(input("que nombre le deseas poner"))
+                    cambio_n=str(input("que nombre le deseas poner "))
                     p["nombre"]=cambio_n
                     print(f"cambio hecho: {p}")
                 elif act=="precio":
@@ -31,8 +31,22 @@ while True:
                 break
             elif p["codigo"]!=buscar:
                 print("revisa q sea correcto")
-            
 
+#3. eliminar productos
+    def op3():
+        buscar=int(input("ingrese el codigo del producto: "))
+        for n in inventario:
+            if n["codigo"]==buscar:
+                print(f"producto encontrado: {n} ")
+                delet=str(input("deseas eliminarlo? "))
+                if delet=="si":
+                    inventario.remove(n)
+                    print("producto eliminado con exito")
+                    break
+                try:
+                    buscar != n
+                    print("revisa si el codigo esta bien")
+                    
 
     print("1. Registrar producto")
     print("2. Actualizar producto")
