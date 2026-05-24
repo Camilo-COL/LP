@@ -1,6 +1,7 @@
 #inventartio dinamico
 inventario=[]
 codigo1=1 
+
 while True:
 #registrar producto
     def op1():
@@ -9,7 +10,7 @@ while True:
         categoria=str(input("A que categoria pertenece: "))
         precio=int(input("valor del producto: "))
         stock=int(input("Cuanto de esto hay?: "))
-        producto_nuevo={"codigo":codigo1,"nombre":nombre,"categoria":categoria,"precio":precio,"Stock":stock}
+        producto_nuevo=(f"codigo:{codigo1}\nnombre:{nombre}\ncategoria:{categoria}\nprecio{precio}\nStock:{stock}")        
         inventario.append(producto_nuevo)
         print(producto_nuevo)
         codigo1+=1
